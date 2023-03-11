@@ -1,14 +1,15 @@
-# Ouvrir un fichier image
+# Open image file
 
-from tkinter import filedialog, messagebox, Label # Importer le module de communication avec le système de fichiers, les boîtes de dialogue et Label
+from tkinter import filedialog, messagebox, Label # Import file dialog and  messagebox modules, and Label widget
 from PIL import ImageTk # Importer le module ImageTk de PIL
 
 
 
-def OpenFile(label):
-    "Ouvrir un fichier image"
+def OpenFile(label, master_window):
+    "Ask for a file to open"
     try:
-        file = filedialog.askopenfilename(initialdir= "C:", filetypes= [("Fichiers image", ".jpg", ".png")]) # Demander à l'utilisateur le fichier à ouvrir
+        file = filedialog.askopenfilename(initialdir= "C:", filetypes= [("Fichiers image", (".jpg", ".png"))]) # Ask user what file to open
+        master_window.title("{} - Image-Edit".format(file))
        
 
         print(file)
